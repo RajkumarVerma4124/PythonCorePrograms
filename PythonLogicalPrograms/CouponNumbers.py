@@ -2,6 +2,7 @@
 
 import random
 class CouponNumber:
+    #Taking the range of coupon numbers from users
     def main(self):
         countRandom = 0
         try:
@@ -12,9 +13,11 @@ class CouponNumber:
         else:
             couponObj.collectCoupon(couponCount,countRandom)
 
+    #Giving random coupon numbers between the range
     def getCouponNumber(self,couponCount):
         return random.randint(1,couponCount)
 
+    #providing and checking unique coupon numbers from random coupon numbers
     def collectCoupon(self,couponCount,countRandom):
         listCoupon = [ ]
         uniqueListCoupon = [ ]

@@ -2,23 +2,24 @@
 
 from datetime import datetime, date
 class StopWatch:
+    #Initializing start time by datetime
     def start(self):
         startTime = datetime.now().time()
         return startTime
 
-
+    #defining stop time after start time using datetime
     def stop(self):
         stopTime = datetime.now().time()
         return stopTime
 
+    #checking elapsed time between start time and stop time
     def timeElapsed(self, startTime, stopTime):
         elapsedTime = datetime.combine(date.today(),stopTime) - datetime.combine(date.today(),startTime)
         print(" Elapsed time :", elapsedTime)
         print(" Elapsed time :",elapsedTime.seconds,"seconds and ",elapsedTime.microseconds, "microseconds")
 
-
-
 watchObj = StopWatch()
+#defining the function for start,stop and elapsed time
 print("Enter 1 to  START\nEnter 2 to STOP \nEnter 3 to Check Elapsed Time \nEnter 4 To EXIT")
 while True:
     choice = int(input("Enter Your Choice : "))

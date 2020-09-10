@@ -88,7 +88,7 @@ class TicTacToe:
                 numberOfMoves -= 1
                 startGame.printBoard()
             startGame.play()
-
+    #Player turning change
     def playerTurnsChange(self):
         global turnFlag,numberOfMoves
         #startGame.checkWin()
@@ -98,7 +98,7 @@ class TicTacToe:
             sys.exit(0)
         else:
             startGame.play()
-
+    #Computer positions
     def playBoardPosition(self,position):
         global numberOfMoves
         print("MovesLeft",numberOfMoves)
@@ -106,7 +106,7 @@ class TicTacToe:
         numberOfMoves -= 1
         startGame.printBoard()
         startGame.playerTurnsChange()
-
+    #winning moves
     def winPlay(self,i1, i2, i3,checkCompWin):
         if( board[i1] == board[i2] and board[i1] != "-" and board[i3] == "-" and board[i1] == checkCompWin):
             startGame.playBoardPosition(i3)
@@ -118,7 +118,7 @@ class TicTacToe:
             startGame.playBoardPosition(i1)
 
 
-
+    #every possible position of boards
     def compPlayToWin(self,checkPlayer):
         startGame.winPlay(0,1,2,checkPlayer)
         startGame.winPlay(3,4,5,checkPlayer)
@@ -182,7 +182,10 @@ class TicTacToe:
             return board[positionOne]
         return ""
 
+
 startGame = TicTacToe()
+
+#initializing array,string and variables
 board = []
 turnFlag = ""
 player = ""
